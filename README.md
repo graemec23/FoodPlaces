@@ -1,5 +1,5 @@
 # Food Places
-Code testing using React and Redux to manage state.
+Code test using React and Redux to manage state.
 
 ##Install dependencies
 ```js
