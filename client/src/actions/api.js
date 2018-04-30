@@ -17,13 +17,10 @@ export async function makePost(path, data= {}) {
 export function getUsersJson() {
 
     const promise = new Promise(async (resolve, reject) => {
-
-        // console.log('fields', email, username, password);
         const response = await makePost('./data/users.json');
         console.log('response', response);
         // console.log('response', response);
-        // if (response.data.token) {
-        //   setValue(REGISTRATION_TOKEN_KEY, response.data.token);
+        // if (response.data) {
         //   resolve();
         // } else {
         //   reject();
