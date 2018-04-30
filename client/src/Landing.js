@@ -3,8 +3,6 @@ import Header from './components/common/Header';
 import UserList from './components/UserList';
 import VenueList from './components/VenueList';
 
-// import users from './data/users.json';
-// import venues from './data/venues.json';
 
 class App extends Component {
     render() {
