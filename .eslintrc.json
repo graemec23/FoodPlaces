@@ -1,6 +1,6 @@
 {
 	"extends": [
-        "plugin:flowtype/recommended",
+    "plugin:flowtype/recommended",
 		"airbnb",
 		"prettier",
 		"prettier/react"
@@ -10,12 +10,16 @@
 		"prettier"
   ],
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/prefer-default-export": "off"
   },
   "parser": "babel-eslint",
 	"parserOptions": {
 		"ecmaVersion": 2016,
-		"sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+			"jsx": true
+		}
 	},
 	"env": {
 		"es6": true,

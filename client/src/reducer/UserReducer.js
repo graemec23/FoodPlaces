@@ -12,11 +12,11 @@ const INITIAL_STATE = [];
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case GET_USERS:
-      return [ ...state, ...users ]
+      return [...state, ...users]
     case UPDATE_USER:
-    return [...state.slice(0, action.payload.index),
-      Object.assign({}, state[action.payload.index], {isSelected: action.payload.isSelected}),
-      ...state.slice(action.payload.index + 1)]
+      return state.map((content, i) =>
+        i === action.payload.index ? { ...content, isSelected: action.payload.isSelected }
+          : content);
     default:
       return state;
   }

@@ -1,64 +1,38 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getUsers, updateUser } from '../../actions';
+// import { getUsers, updateUser } from '../../actions';
 
 class UserList extends Component {
 
-    componentWillMount() {
-        this.props.getUsers();
-    }
 
-    selectUser(name, isSelected) {
-      let index = this.props.users.findIndex(user => user.name === name);
-      this.props.updateUser({index, isSelected});
-    }
+  toggleUser(selectedUser) {
+    const { name } = selectedUser;
+    const index = this.props.users.findIndex(user => user.name === name);
+    const user = this.props.users[index];
+    this.props.updateUser({ index, isSelected: !user.isSelected });
+  }
 
-    userAdded(user) {
-      if (user.isSelected) {
-          return (
-            <button onClick={this.selectUser.bind(this, user.name, false)}>remove User+</button>
-          );
-      }
-
-      return (
-        <div>
-          <button onClick={this.selectUser.bind(this, user.name, true)}>Add User+</button>
-        </div>
-      );
-    }
-
-
-    render() {
-        return (
-          <div className="c-user-list">
-            {this.props.users.map(user => (
-                <div key={user.name} className="c-user-list__item">
-                    <div>
-                        {user.name}
-                    </div>
-                    { this.userAdded(user)}
-                </div>
-            ))}
-
-            {/* <h3>Selected</h3> */}
-            {/* {this.props.users.filter(res => res.isSelected).map(user => (
-                <div key={user.name} className="c-user-list__item">
-                    <div>
-                        {user.name}
-                    </div>
-                    { this.userAdded(user)}
-                </div>
-            ))} */}
-         </div>
-        );
-    }
+  render() {
+    console.log('props', this.props)
+    return (
+      <div className="c-user-list">
+        {this.props.users.map(user => (
+          <div key={user.name} className="c-user-list__item">
+            <input
+              type="checkbox"
+              id={user.name}
+              value={user}
+              onChange={this.toggleUser.bind(this, user)}
+              checked={user.isSelected === true}
+            />
+            <label htmlFor={user.name}>
+              {user.name}
+            </label>
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
 
-const mapStateToProps = ({users}) => {
-  return { users };
-}
-
-export default connect(mapStateToProps, {
-  getUsers,
-  updateUser
-})(UserList);
+export default UserList;

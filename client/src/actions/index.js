@@ -7,22 +7,25 @@ import {
 import {
     GET_USERS,
     UPDATE_USER,
-    GET_VENUES
+    GET_VENUES,
+    UPDATE_VENUES
 } from './types';
 
 export const getUsers = (prop) => ({
   type: GET_USERS
 });
 
-export const updateUser = (user) => (dispatch) => {
-
-  console.log('user', user)
+export const updateUser = (user) => (dispatch, getState) => {
   dispatch({type: UPDATE_USER, payload: user})
+  const { users } = getState();
+  dispatch({type: UPDATE_VENUES, payload: users})
 };
 
 export const getVenues = (prop) => ({
   type: GET_VENUES
 });
+
+//
 
 
 // export const getUsers = () => (dispatch) => {

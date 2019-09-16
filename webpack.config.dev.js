@@ -1,6 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
-var GLOBALS = {
+const path = require('path');
+const webpack = require('webpack');
+
+const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
 };
 
@@ -52,9 +53,9 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['es2015'],
+              presets: ['@babel/preset-env'],
               compact: false,
-              plugins: ['transform-object-assign'],
+              // plugins: ['transform-object-assign'],
             },
           }
         ],
