@@ -1,9 +1,9 @@
 import {
   GET_VENUES,
   UPDATE_VENUES
-} from '../actions/types';
+} from "../actions/types";
 
-import venues from './data/venues.json';
+import venues from "./data/venues.json";
 
 // const INITIAL_STATE = [];
 

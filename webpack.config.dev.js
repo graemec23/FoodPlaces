@@ -12,7 +12,7 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    './src/index.js'
+    './src/App.tsx'
   ],
   output: {
     path: path.join(__dirname, '/client/dist'),
@@ -25,7 +25,7 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin()
   ],
   resolve: {
-    extensions: ['.js'],
+    extensions: [".ts", ".tsx", ".js", ".json"],
     modules: ['src', 'node_modules']
   },
 
@@ -47,7 +47,13 @@ module.exports = {
       }, {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
-      }, {
+      },
+
+      {
+        test: /\.tsx?$/,
+        loader: 'babel-loader',
+      },
+      {
         test: /\.js?$/,
         use: [
           {

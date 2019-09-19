@@ -1,8 +1,9 @@
-import React, { Component }  from 'react';
-import { connect }  from 'react-redux';
-import set from 'lodash/set';
-import omit from 'lodash/omit';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+// import set from 'lodash/set';
+// import omit from 'lodash/omit';
 import { getVenues } from '../../actions';
+
 class AvoidList extends Component {
 
   /**
@@ -10,28 +11,28 @@ class AvoidList extends Component {
    * Updates the venues list given the selected users
    *
    */
-  getAvailableVenues(users=[], venues=[]) {
-  // creates a new venues list
+  getAvailableVenues(users = [], venues = []) {
+    // creates a new venues list
     return venues.map(venue => {
 
-      const { food, drinks:venueDrinks } = venue;
+      const { food, drinks: venueDrinks } = venue;
 
       // checks if this venue should be avoided
-      const avoid = users.reduce((avoid, { name:user, wont_eat, drinks:userDrinks }) => {
+      const avoid = users.reduce((avoid, { name: user, wont_eat, drinks: userDrinks }) => {
 
-            const avoidFood = food.filter(meal => !wont_eat.includes(meal)).length === 0;
-            const avoidDrinks = venueDrinks.filter(drink => userDrinks.includes(drink)).length === 0;
+        const avoidFood = food.filter(meal => !wont_eat.includes(meal)).length === 0;
+        const avoidDrinks = venueDrinks.filter(drink => userDrinks.includes(drink)).length === 0;
 
-            if (avoidFood || avoidDrinks) {
-              return {
-                ...avoid,
-                ...set({}, user, { avoidFood, avoidDrinks })
-              };
-            }
+        if (avoidFood || avoidDrinks) {
+          return {
+            ...avoid,
+            ...set({}, user, { avoidFood, avoidDrinks })
+          };
+        }
 
-            return avoid;
+        return avoid;
 
-          }, {});
+      }, {});
 
       // only includes the 'avoid' object if the venue should be avoided
       // which makes it simple for the UI to filter the venues
@@ -54,7 +55,7 @@ class AvoidList extends Component {
    * Returns only the selected users
    *
    */
-  getSelectedUsers(users=this.props.users) {
+  getSelectedUsers(users = this.props.users) {
     return users.filter(user => user.isSelected);
   }
 
@@ -64,7 +65,7 @@ class AvoidList extends Component {
    * Returns an array with the valid and invalid venues
    *
    */
-  getVenues(venues=this.props.venues, users=this.getSelectedUsers()) {
+  getVenues(venues = this.props.venues, users = this.getSelectedUsers()) {
     return [
       venues
         .filter(venues => users.length > 0)
@@ -82,7 +83,7 @@ class AvoidList extends Component {
    */
   updateVenuesList() {
 
-    const { venues=[] } = this.props;
+    const { venues = [] } = this.props;
 
     this.setState({
       venues: this.getAvailableVenues(this.getSelectedUsers(), venues)
@@ -100,7 +101,7 @@ class AvoidList extends Component {
   render() {
 
     // const { users=[] } = this.state;
-    const [ validVenues, invalidVenues ] = this.getVenues();
+    const [validVenues, invalidVenues] = this.getVenues();
 
     return (
       <div className="App">
@@ -108,17 +109,17 @@ class AvoidList extends Component {
         <div>
           <h3>Places to avoid</h3>
           <div>
-           {
+            {
               invalidVenues
                 .map(venue => (
                   <div
                     key={venue.name}
                     className="invalid-venues"
                   >
-                    { venue.name }
+                    {venue.name}
                     <div className="avoid">
                       {
-                        Object.entries(venue.avoid).map(([user, {avoidFood, avoidDrinks}], index) => (
+                        Object.entries(venue.avoid).map(([user, { avoidFood, avoidDrinks }], index) => (
                           <div
                             key={index}
                           >
@@ -141,8 +142,8 @@ class AvoidList extends Component {
   }
 }
 
-const mapStateToProps = ({venues, users}) => {
-  return {venues, users}
+const mapStateToProps = ({ venues, users }) => {
+  return { venues, users }
 };
 
 export default connect(mapStateToProps, {
