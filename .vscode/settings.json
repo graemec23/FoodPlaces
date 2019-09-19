@@ -1,6 +1,10 @@
 {
     "workbench.colorCustomizations": {
         "activityBar.background": "#ef7853",
+<<<<<<< HEAD
+=======
+        "activityBar.activeBorder": "#8af4a3",
+>>>>>>> moving to react hooks
         "activityBar.foreground": "#15202b",
         "activityBar.inactiveForeground": "#15202b99",
         "activityBarBadge.background": "#8af4a3",

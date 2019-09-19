@@ -7,13 +7,21 @@
     // "lib": [],                             /* Specify library files to be included in the compilation. */
     // "allowJs": true,                       /* Allow javascript files to be compiled. */
     // "checkJs": true,                       /* Report errors in .js files. */
+<<<<<<< HEAD
     // "jsx": "preserve",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+=======
+    "jsx": "preserve", /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+>>>>>>> moving to react hooks
     // "declaration": true,                   /* Generates corresponding '.d.ts' file. */
     // "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */
     "sourceMap": true, /* Generates corresponding '.map' file. */
     // "outFile": "./",                       /* Concatenate and emit output to single file. */
     "outDir": "dist", /* Redirect output structure to the directory. */
+<<<<<<< HEAD
     "rootDir": "./src", /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+=======
+    "rootDir": "./client/public/src", /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+>>>>>>> moving to react hooks
     // "composite": true,                     /* Enable project compilation */
     // "tsBuildInfoFile": "./",               /* Specify file to store incremental compilation information */
     // "removeComments": true,                /* Do not emit comments to output. */
@@ -63,12 +71,20 @@
     "resolveJsonModule": true
   },
   "include": [
+<<<<<<< HEAD
     "src/**/*.ts"
+=======
+    "client/public/src/**/*"
+>>>>>>> moving to react hooks
   ],
   "exclude": [
     "node_modules",
     "**/__tests__",
+<<<<<<< HEAD
     "**/__mocks__",
     "knexfile.ts"
+=======
+    "**/__mocks__"
+>>>>>>> moving to react hooks
   ]
 }

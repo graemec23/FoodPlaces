@@ -7,7 +7,7 @@ const GLOBALS = {
 
 module.exports = {
   mode: 'development',
-  context: path.join(__dirname, '/client'),
+  context: path.join(__dirname, '/client/public'),
   target: 'web',
   devtool: 'source-map',
   entry: [
@@ -76,7 +76,13 @@ module.exports = {
       }, {
         test: /\.(pdf|word)(\?.*$|$)/,
         use: 'url-loader?limit=1&name=documents/[name].[ext]'
-      }
+      },
+      {
+        // make all files ending in .json5 use the `json5-loader`
+        test: /\.json$/,
+        use: 'json5-loader',
+        type: 'javascript/auto'
+      },
     ]
   }
 };

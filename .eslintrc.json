@@ -1,12 +1,19 @@
 {
   "env": {
     "browser": true,
+<<<<<<< HEAD
     "es6": true,
+=======
+>>>>>>> moving to react hooks
     "node": true,
     "jest": true
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
+<<<<<<< HEAD
+=======
+    "ecmaVersion": 2017,
+>>>>>>> moving to react hooks
     "project": "tsconfig.json",
     "sourceType": "module"
   },
@@ -21,6 +28,10 @@
   ],
   "plugins": [
     "@typescript-eslint/eslint-plugin",
+<<<<<<< HEAD
+=======
+    "prettier",
+>>>>>>> moving to react hooks
     "jest"
   ],
   "rules": {
@@ -37,22 +48,39 @@
       }
     ],
     "@typescript-eslint/indent": "error",
+<<<<<<< HEAD
     "@typescript-eslint/interface-name-prefix": "error",
     "@typescript-eslint/no-angle-bracket-type-assertion": "error",
+=======
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/consistent-type-assertions": "error",
+>>>>>>> moving to react hooks
     "@typescript-eslint/no-empty-interface": "error",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-misused-new": "error",
     "@typescript-eslint/no-namespace": "error",
     "@typescript-eslint/no-parameter-properties": "off",
+<<<<<<< HEAD
     "@typescript-eslint/no-triple-slash-reference": "error",
+=======
+    "@typescript-eslint/triple-slash-reference": "error",
+>>>>>>> moving to react hooks
     "@typescript-eslint/no-use-before-declare": "off",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/prefer-for-of": "error",
     "@typescript-eslint/prefer-function-type": "error",
+<<<<<<< HEAD
     "@typescript-eslint/prefer-interface": "error",
     "@typescript-eslint/prefer-namespace-keyword": "error",
     "@typescript-eslint/type-annotation-spacing": "error",
     "@typescript-eslint/unified-signatures": "error",
+=======
+    "@typescript-eslint/consistent-type-definitions": "error",
+    "@typescript-eslint/prefer-namespace-keyword": "error",
+    "@typescript-eslint/type-annotation-spacing": "error",
+    "@typescript-eslint/unified-signatures": "error",
+    "@typescript-eslint/explicit-function-return-type": "off",
+>>>>>>> moving to react hooks
     "arrow-body-style": "error",
     "arrow-parens": [
       "error",
@@ -75,7 +103,11 @@
     "no-console": "error",
     "no-debugger": "error",
     "no-empty": "error",
+<<<<<<< HEAD
     "no-empty-functions": "error",
+=======
+    "no-empty-function": "error",
+>>>>>>> moving to react hooks
     "no-fallthrough": "off",
     "no-invalid-this": "off",
     "no-multiple-empty-lines": "error",
@@ -93,18 +125,26 @@
       "consistent-as-needed"
     ],
     "radix": "error",
+<<<<<<< HEAD
     "some-rule": "error",
+=======
+    // "some-rule": "error",
+>>>>>>> moving to react hooks
     "space-before-function-paren": [
       "error",
       {
         "anonymous": "never",
         "asyncArrow": "always",
+<<<<<<< HEAD
         "constructor": "never",
         "method": "never",
+=======
+>>>>>>> moving to react hooks
         "named": "never"
       }
     ],
     "use-isnan": "error",
+<<<<<<< HEAD
     "valid-typeof": "off",
     "@typescript-eslint/tslint/config": [
       "error",
@@ -181,5 +221,83 @@
         }
       }
     ]
+=======
+    "valid-typeof": "off"
+    // "@typescript-eslint/tslint/config": [
+    //   "error",
+    //   {
+    //     "rules": {
+    //       "align": [
+    //         true,
+    //         "parameters",
+    //         "statements"
+    //       ],
+    //       "comment-format": [
+    //         true,
+    //         "check-space"
+    //       ],
+    //       "import-spacing": true,
+    //       "jsdoc-format": true,
+    //       "max-line-length": [
+    //         true,
+    //         120
+    //       ],
+    //       "no-reference-import": true,
+    //       "no-shadowed-variable": true,
+    //       "no-trailing-whitespace": true,
+    //       "no-unused-expression": true,
+    //       "one-line": [
+    //         true,
+    //         "check-catch",
+    //         "check-else",
+    //         "check-finally",
+    //         "check-open-brace",
+    //         "check-whitespace"
+    //       ],
+    //       "only-arrow-functions": [
+    //         true,
+    //         "allow-declarations",
+    //         "allow-named-functions"
+    //       ],
+    //       "quotemark": [
+    //         true,
+    //         "double",
+    //         "avoid-escape"
+    //       ],
+    //       "semicolon": [
+    //         true,
+    //         "always"
+    //       ],
+    //       "trailing-comma": [
+    //         true,
+    //         {
+    //           "esSpecCompliant": true,
+    //           "multiline": "always",
+    //           "singleline": "never"
+    //         }
+    //       ],
+    //       "triple-equals": [
+    //         true,
+    //         "allow-null-check"
+    //       ],
+    //       "variable-name": [
+    //         true,
+    //         "ban-keywords",
+    //         "check-format",
+    //         "allow-pascal-case"
+    //       ],
+    //       "whitespace": [
+    //         true,
+    //         "check-branch",
+    //         "check-decl",
+    //         "check-operator",
+    //         "check-separator",
+    //         "check-type",
+    //         "check-typecast"
+    //       ]
+    //     }
+    //   }
+    // ]
+>>>>>>> moving to react hooks
   }
 }

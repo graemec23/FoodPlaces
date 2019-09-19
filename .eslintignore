@@ -1,1 +1,4 @@
 node_modules/
+converage/
+client/src/**/__test__
+webpack.config.dev.js
